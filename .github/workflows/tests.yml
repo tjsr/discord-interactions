@@ -15,9 +15,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18.20.4'
+      - name: Install Corepack
+        run: corepack install
       - name: Install Yarn
         run: |
-          corepack install
           yes " " | yarn set version stable
           yes " " | yarn install
       - name: Build
