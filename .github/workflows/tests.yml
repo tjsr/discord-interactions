@@ -16,9 +16,10 @@ jobs:
         with:
           node-version: '18'
       - name: Install Yarn
-        run: npm install -g yarn@latest
-      - name: Install
-        run: yarn install
+        run: |
+          corepack enable
+          yes " " | yarn set version stable
+          yes " " | yarn install
       - name: Build
         run: yarn build
       - name: Tests
