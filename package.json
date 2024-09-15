@@ -3,7 +3,14 @@
   "version": "0.0.1",
   "scripts": {
     "clean": "lerna clean",
-    "build": "lerna run build",
+    "build:lerna": "lerna run build",
+    "build:request": "bin/pb request",
+    "build:api": "bin/pb api",
+    "build:builders": "cd packages/builders && npm install && npm run build && npm link && cd ../",
+    "build:core": "cd packages/core && npm install && npm run build && npm link && cd ../",
+    "build:ifp": "bin/pb isomorphic-fetch-ponyfill",
+    "build:verify": "bin/pb verify",
+    "build": "npm run build:ifp && npm run build:request && npm run build:api && npm run build:builders && npm run build:core && npm run build:verify",
     "format": "lerna run format",
     "lint": "lerna run lint",
     "docs": "lerna run docs",
@@ -31,5 +38,6 @@
   "private": true,
   "engines": {
     "node": ">=18.20.4 <19"
-  }
+  },
+  "packageManager": "yarn@4.4.1"
 }

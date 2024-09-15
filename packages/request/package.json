@@ -30,7 +30,8 @@
     "discord-api-types": "^0.37.18",
     "formdata-node": "^4.3.3",
     "isomorphic-fetch-ponyfill": "^0.3.18",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "undici": "^6.19.8"
   },
   "devDependencies": {
     "@types/jest": "^28.1.4",

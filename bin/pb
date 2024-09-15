@@ -1,0 +1,10 @@
+#!/bin/bash
+set +e
+
+if [ -z "$1" ]; then
+  echo "Usage: pb <package>"
+  exit 1
+fi
+
+cd $PWD/packages/$1 && npm install && npm run build && npm link
+
